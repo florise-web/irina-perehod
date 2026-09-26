@@ -33,6 +33,15 @@
   @media (max-width:640px){ .hero-bg-photo{background-image:url('assets/hero-mobile.jpg');} }
   .transition-banner{height:40vh; min-height:240px;}
   @media (max-width:640px){ .transition-banner{height:30vh; min-height:200px;} }
+  .hero-grid{display:flex; align-items:center; gap:64px; flex-wrap:wrap;}
+  .hero-text-col{flex:1 1 460px; min-width:280px;}
+  .hero-photo-col{flex:1 1 320px; display:flex; justify-content:center; position:relative;}
+  @media (max-width:860px){
+    .hero-grid{flex-direction:column-reverse; text-align:center;}
+    .hero-badges, .hero-cta{justify-content:center !important;}
+    .hero-desc, .hero-divider{margin-left:auto !important; margin-right:auto !important;}
+    .hero-photo-col{max-width:240px; margin:0 auto 8px;}
+  }
 </style>
 </head>
 <body>
@@ -41,27 +50,12 @@
 <!-- ============ HERO ============ -->
   <section style="position:relative; min-height:100svh; display:flex; align-items:center; justify-content:center; padding:96px 20px 72px; background:radial-gradient(120% 80% at 50% 0%, #241a3d 0%, #14101f 45%, #0d0b1a 100%); overflow:hidden;">
 
-    <div style="position:absolute; inset:0; overflow:hidden; pointer-events:none;">
-      <div class="hero-bg-photo" style="position:absolute; inset:-6%; background-size:cover; background-position:center 30%; background-repeat:no-repeat;"></div>
-      <div style="position:absolute; inset:0; background:radial-gradient(70% 55% at 50% 40%, rgba(13,11,26,.28) 0%, rgba(13,11,26,.72) 55%, #0d0b1a 88%);"></div>
-      <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(13,11,26,.85) 0%, transparent 26%, transparent 58%, #0d0b1a 100%);"></div>
-      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,6,24,.92) 0%, rgba(20,6,24,0) 34%), linear-gradient(0deg, rgba(20,6,24,.94) 0%, rgba(20,6,24,0) 30%);"></div>
-    </div>
-
-    <div style="position:absolute; left:50%; top:40%; width:min(78vw,700px); aspect-ratio:1; transform:translate(-50%,-50%); pointer-events:none; opacity:.5; animation:spinSlow 120s linear infinite;">
+    <div style="position:absolute; left:18%; top:30%; width:min(60vw,520px); aspect-ratio:1; transform:translate(-50%,-50%); pointer-events:none; opacity:.4; animation:spinSlow 120s linear infinite;">
       <svg width="100%" height="100%" viewBox="0 0 400 400" aria-hidden="true">
         <g stroke="#c9a15a" fill="none" stroke-width="0.6" opacity="0.55">
           <circle cx="200" cy="200" r="196" stroke-dasharray="2 9"></circle>
           <circle cx="200" cy="200" r="150"></circle>
           <circle cx="200" cy="200" r="104" stroke-dasharray="1 6"></circle>
-        </g>
-      </svg>
-    </div>
-    <div style="position:absolute; left:50%; top:40%; width:min(52vw,430px); aspect-ratio:1; transform:translate(-50%,-50%); pointer-events:none; opacity:.45; animation:spinBack 90s linear infinite;">
-      <svg width="100%" height="100%" viewBox="0 0 400 400" aria-hidden="true">
-        <g stroke="#e8c789" fill="none" stroke-width="0.7" opacity="0.5">
-          <circle cx="200" cy="200" r="180" stroke-dasharray="14 22"></circle>
-          <circle cx="200" cy="200" r="58"></circle>
         </g>
       </svg>
     </div>
@@ -81,48 +75,56 @@
       <span style="position:absolute; left:18%; top:44%; width:2px; height:2px; border-radius:50%; background:#e8c789; animation:twinkle 8s ease-in-out 3.6s infinite;"></span>
     </div>
 
-    <div style="position:absolute; inset:0; pointer-events:none; opacity:.28;">
+    <div style="position:absolute; inset:0; pointer-events:none; opacity:.22;">
       <svg width="100%" height="100%" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <g stroke="#c9a15a" fill="none" stroke-width="0.7" opacity="0.30">
-          <circle cx="600" cy="430" r="150"></circle>
-          <circle cx="600" cy="430" r="240"></circle>
-          <circle cx="600" cy="430" r="330"></circle>
-          <circle cx="600" cy="430" r="430"></circle>
-          <line x1="600" y1="0" x2="600" y2="900"></line>
-          <line x1="100" y1="430" x2="1100" y2="430"></line>
-          <line x1="270" y1="100" x2="930" y2="760"></line>
-          <line x1="930" y1="100" x2="270" y2="760"></line>
+          <circle cx="300" cy="430" r="150"></circle>
+          <circle cx="300" cy="430" r="240"></circle>
+          <circle cx="300" cy="430" r="330"></circle>
+          <line x1="300" y1="0" x2="300" y2="900"></line>
+          <line x1="0" y1="430" x2="1200" y2="430"></line>
         </g>
       </svg>
     </div>
-    <div style="position:absolute; width:520px; height:520px; left:50%; top:38%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(168,117,224,.32) 0%, rgba(139,95,191,.10) 45%, transparent 70%); filter:blur(28px); animation:glowPulse 7s ease-in-out infinite; pointer-events:none;"></div>
 
-    <div style="position:relative; width:100%; max-width:1000px; text-align:center;">
+    <div class="hero-grid" style="position:relative; width:100%; max-width:1180px;">
 
-      <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:38px;">
-        <span style="border:1px solid rgba(201,161,90,.4); border-radius:100px; padding:8px 18px; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#e8c789;">Старт в ноябре</span>
-        <span style="border:1px solid rgba(201,161,90,.4); border-radius:100px; padding:8px 18px; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#e8c789;">14–21 день · онлайн</span>
+      <div class="hero-text-col">
+
+        <div class="hero-badges" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-start; margin-bottom:38px;">
+          <span style="border:1px solid rgba(201,161,90,.4); border-radius:100px; padding:8px 18px; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#e8c789;">Старт в ноябре</span>
+          <span style="border:1px solid rgba(201,161,90,.4); border-radius:100px; padding:8px 18px; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#e8c789;">14–21 день · онлайн</span>
+        </div>
+
+        <p style="margin:0 0 22px; font-size:12px; letter-spacing:.32em; text-transform:uppercase; color:#c9a15a;">Онлайн-программа трансформации</p>
+
+        <h1 style="margin:0; font-family:'Cinzel', serif; font-weight:500; font-size:clamp(34px,5.6vw,68px); line-height:1.08; letter-spacing:.06em; color:#f6f1e6; text-shadow:0 0 44px rgba(232,199,137,.28); text-wrap:balance;">
+          ПЕРЕХОД<br><span style="display:inline-block; margin-top:10px; font-family:'Cormorant Garamond', serif; font-weight:300; font-style:italic; font-size:.62em; letter-spacing:.02em; color:#e8c789; text-transform:none;">новое сознание</span>
+        </h1>
+
+        <div class="hero-divider" style="width:1px; height:56px; margin:34px 0; background:linear-gradient(to bottom, transparent, #c9a15a, transparent);"></div>
+
+        <p class="hero-desc" style="margin:0; max-width:520px; font-size:clamp(15px,1.6vw,18px); line-height:1.65; color:#cfc6d8; text-wrap:pretty;">
+          Программа о том, как перестать жить на страхах и чужих ожиданиях — и начать жить так, как хочется вам: спокойно, свободно, с деньгами и без страха потерять себя.
+        </p>
+
+        <p style="margin:18px 0 0; font-family:'Cinzel', serif; font-size:14px; letter-spacing:.1em; color:#e8c789;">Участие от 34 900 ₽ или от 5 817 ₽ в месяц в рассрочку</p>
+
+        <div class="hero-cta" style="display:flex; flex-direction:column; align-items:flex-start; gap:16px; margin-top:30px;">
+          <a href="#tariffs" style="display:inline-block; padding:15px 36px; border-radius:100px; background:linear-gradient(135deg,#e8c789,#c9a15a); color:#14101f; font-family:'Cinzel', serif; font-size:12.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; text-decoration:none;">Выбрать тариф ↓</a>
+          <a href="#steps" style="font-family:'Cinzel', serif; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:#a49bb2;">Как устроена программа ↓</a>
+        </div>
       </div>
 
-      <p style="margin:0 0 22px; font-size:12px; letter-spacing:.32em; text-transform:uppercase; color:#c9a15a;">Онлайн-программа трансформации</p>
-
-      <h1 style="margin:0; font-family:'Cinzel', serif; font-weight:500; font-size:clamp(34px,7.2vw,86px); line-height:1.08; letter-spacing:.06em; color:#f6f1e6; text-shadow:0 0 44px rgba(232,199,137,.28); text-wrap:balance;">
-        ПЕРЕХОД<br><span style="display:inline-block; margin-top:10px; font-family:'Cormorant Garamond', serif; font-weight:300; font-style:italic; font-size:.62em; letter-spacing:.02em; color:#e8c789; text-transform:none;">новое сознание</span>
-      </h1>
-
-      <div style="width:1px; height:56px; margin:34px auto; background:linear-gradient(to bottom, transparent, #c9a15a, transparent);"></div>
-
-      <p style="margin:0 auto; max-width:620px; font-size:clamp(15px,1.9vw,19px); line-height:1.65; color:#cfc6d8; text-wrap:pretty;">
-        Программа о том, как перестать жить на страхах и чужих ожиданиях — и начать жить так, как хочется вам: спокойно, свободно, с деньгами и без страха потерять себя.
-      </p>
-
-      <p style="margin:18px 0 0; font-family:'Cinzel', serif; font-size:14px; letter-spacing:.1em; color:#e8c789;">Участие от 34 900 ₽ или от 5 817 ₽ в месяц в рассрочку</p>
-
-      <div style="display:flex; flex-direction:column; align-items:center; gap:16px; margin-top:30px;">
-        <a href="#tariffs" style="display:inline-block; padding:15px 36px; border-radius:100px; background:linear-gradient(135deg,#e8c789,#c9a15a); color:#14101f; font-family:'Cinzel', serif; font-size:12.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; text-decoration:none;">Выбрать тариф ↓</a>
-        <a href="#steps" style="font-family:'Cinzel', serif; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:#a49bb2;">Как устроена программа ↓</a>
-        <span style="width:1px; height:40px; background:linear-gradient(to bottom, #c9a15a, transparent);"></span>
+      <div class="hero-photo-col">
+        <div style="position:absolute; width:130%; aspect-ratio:1; left:50%; top:50%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(168,117,224,.32) 0%, rgba(139,95,191,.10) 45%, transparent 70%); filter:blur(30px); animation:glowPulse 7s ease-in-out infinite; pointer-events:none;"></div>
+        <div style="position:relative; width:100%; max-width:380px; aspect-ratio:3/4; border-radius:16px; overflow:hidden; border:1px solid rgba(201,161,90,.35); box-shadow:0 0 60px rgba(168,117,224,.22), 0 30px 70px rgba(0,0,0,.5);">
+          <img src="assets/hero-perehod.jpg" alt="Ирина Гребенюкова" style="width:100%; height:100%; object-fit:cover; object-position:center 22%; display:block;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(13,11,26,.45) 100%);"></div>
+          <div style="position:absolute; inset:0; border-radius:16px; box-shadow:inset 0 0 0 1px rgba(232,199,137,.15);"></div>
+        </div>
       </div>
+
     </div>
   </section>
 
