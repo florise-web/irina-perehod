@@ -905,5 +905,5 @@ class Component extends DCLogic {
 </script>
 
 
-<script>(function(){try{var p=new URLSearchParams(location.search);var s=p.get('s')||p.get('utm_source')||'';if(s){try{localStorage.setItem('fl_src',s)}catch(e){}}else{try{s=localStorage.getItem('fl_src')||''}catch(e){}}if(!s)s='direct';var tag=function(){document.querySelectorAll('a[href*="getplatinum.ru"],a[href*="t.me/florise_irina"]').forEach(function(a){if(a.dataset.src)return;try{var u=new URL(a.href);u.searchParams.set('utm_source',s);u.searchParams.set('utm_medium','site_perehod');a.href=u.toString();a.dataset.src=1}catch(e){}})};tag();new MutationObserver(tag).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}})();</script>
+<script>(function(){var s='';try{var p=new URLSearchParams(location.search);s=p.get('s')||p.get('utm_source')||'';if(s){try{localStorage.setItem('fl_src',s)}catch(e){}}else{try{s=localStorage.getItem('fl_src')||''}catch(e){}}}catch(e){}if(!s)s='direct';document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a'):null;if(!a||!a.href)return;if(a.href.indexOf('getplatinum.ru')<0&&a.href.indexOf('t.me/florise_irina')<0)return;try{var u=new URL(a.href);u.searchParams.set('utm_source',s);u.searchParams.set('utm_medium','site_perehod');a.href=u.toString()}catch(e){}},true)})();</script>
 </body></html>
